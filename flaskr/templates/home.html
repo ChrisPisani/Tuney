@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tuney</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/home.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
+    <div class="mx-auto order-0">
+      <a href="/home" class="navbar-brand mx-auto">Tuney</a>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/home"><i class="fi-home"><span>Home</span></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/ChrisPisani/Tuney"><i class="fi-social-github"><span>Github</span></i></a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <section id="about">
+    <div class="grid-container">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="text-center">What's Tuney?</h5>
+        </div>
+        <div class="card-section text-center">
+          <p>
+            You want to listen to a song that came out recently, but you're not sure if it'll
+            fit the mood!
+            <br />
+            Look no more, for Tuney will check that for you!
+            <br />
+            We pull any song lyrics (or even speeches!) from Genius, and we'll compute
+            the range of emotions the song might evoke.
+            <br />
+            Try it out below and type any song you're curious about!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="grid-container">
+      <div class="card">
+        <div class="card-section text-center">
+          <h1>
+            🎶 Search a song 🎶
+          </h1>
+          <h6 class="subheader">
+            Enter your favorite song, or a song from your favorite artist.
+          </h6>
+        </div>
+        <div class="card-section align-center text-center">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <ul class="flashes align-center text-center">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endwith %}
+          {% from "_formhelpers.html" import render_field %}
+          <form method=post>
+            <div class="grid-x grid-margin-x grid-padding-x align-center text-center">
+              <div class="cell shrink">
+                {{ render_field(form.select) }}
+              </div>
+              <div class="cell shrink" type="search">
+                {{ render_field(form.song_string) }}
+              </div>
+              <div class="cell shrink" type="search">
+                {{ render_field(form.artist_string) }}
+              </div>
+              <input class="button" type=submit value=Search>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+<footer></footer>
+
+<script type="text/javascript" src="../static/js/HomeSearch.js"></script>
+
+</html>

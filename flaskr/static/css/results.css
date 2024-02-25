@@ -1,0 +1,59 @@
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 1px 1px 1px #999;
+}
+
+.navbar, .card {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+nav {
+  background-color: #9dd7ef;
+}
+
+.tab {
+  text-indent: 1em;
+}
+
+.card-header, nav * {
+  text-transform: uppercase;
+  word-spacing: 1px;
+  color: white;
+  padding: .25em;
+}
+
+nav *:hover {
+  color: black;
+}
+
+#info-section {
+  background-color: black;
+  margin-bottom: 1em;
+}
+
+#info-section * {
+  margin: 1em;
+  color: white;
+}
+
+#album-img {
+  max-width: 25%;
+  width: 15%;
+  left: 0px;
+  right: 0px;
+}
+
+#lyrics-section {
+  clear: both
+}
+
+.tab-pane {
+  width: 100%;
+  height: 16em;
+  overflow-y: scroll;
+}

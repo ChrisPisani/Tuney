@@ -1,0 +1,54 @@
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 1px 1px 1px #999;
+}
+
+.navbar, .card {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+nav {
+  background-color: #9dd7ef;
+}
+
+nav * {
+  text-transform: uppercase;
+  word-spacing: 1px;
+  color: white;
+  padding: .25em;
+}
+
+nav *:hover {
+  color: black;
+}
+
+section {
+  margin: 1em;
+  padding: 1em;
+}
+
+.card {
+  background-color: #5bbce4;
+}
+
+.card h1, h2, h3, h4, h5, h6, label {
+  color: white;
+  padding: .25em;
+}
+
+#form {
+  margin-top: 6em;
+}
+
+body {
+    background-image: url('https://media2.giphy.com/media/aw6CWyyLQ8WyRuktxR/giphy.gif?cid=790b76115d37c2f539526e3967c1b3ad&rid=giphy.gif'), url('https://media0.giphy.com/media/fo2dhRTmaULbStoFkX/giphy.gif?cid=790b76115d375f186a7955686b1bbfb0&rid=giphy.gif');
+    background-color: #9dd7ef;
+    background-size: auto, auto;
+    background-position: center center, center top;
+    background-repeat: no-repeat, repeat;
+}

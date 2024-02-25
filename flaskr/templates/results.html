@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lyric Results</title>
+  <!-- Google fonts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../static/css/results.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
+    <div class="mx-auto order-0">
+      <a href="/home" class="navbar-brand mx-auto">Tuney</a>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/home"><i class="fi-home"><span>Home</span></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/ChrisPisani/Tuney"><i class="fi-social-github"><span>Github</span></i></a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div id="info-section" class="media">
+    <img id="album-img" src={{album_img}} class="align-self-center mr-3">
+    <div>
+      <h5 style="color: #9dd7ef">Title</h5>
+      <p class="tab">
+        {{songTitle}}
+      </p>
+      <h5 style="color: #9dd7ef">Artist</h5>
+      <p class="tab">
+        {{artistName}}
+      </p>
+    </div>
+  </div>
+
+  <div id="lyrics-section" class="container-fluid text-center">
+    <h5>Lyrics Analyzer</h5>
+        {% block body %}
+        <div class="card">
+          <div class="card-header">
+            <nav class="">
+              <div class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-anticipation-tab" data-toggle="tab" href="#nav-anticipation" role="tab" aria-controls="nav-anticipation" aria-selected="true">Anticipation</a>
+                <a class="nav-item nav-link" id="nav-joy-tab" data-toggle="tab" href="#nav-joy" role="tab" aria-controls="nav-joy" aria-selected="false">Joy</a>
+                <a class="nav-item nav-link" id="nav-trust-tab" data-toggle="tab" href="#nav-trust" role="tab" aria-controls="nav-trust" aria-selected="false">Trust</a>
+                <a class="nav-item nav-link" id="nav-sadness-tab" data-toggle="tab" href="#nav-sadness" role="tab" aria-controls="nav-sadness" aria-selected="false">Sadness</a>
+                <a class="nav-item nav-link" id="nav-fear-tab" data-toggle="tab" href="#nav-fear" role="tab" aria-controls="nav-fear" aria-selected="false">Fear</a>
+                <a class="nav-item nav-link" id="nav-surprise-tab" data-toggle="tab" href="#nav-surprise" role="tab" aria-controls="nav-surprise" aria-selected="false">Surprise</a>
+                <a class="nav-item nav-link" id="nav-anger-tab" data-toggle="tab" href="#nav-anger" role="tab" aria-controls="nav-anger" aria-selected="false">Anger</a>
+                <a class="nav-item nav-link" id="nav-disgust-tab" data-toggle="tab" href="#nav-disgust" role="tab" aria-controls="nav-disgust" aria-selected="false">Disgust</a>
+              </div>
+            </nav>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="nav-tabContent">
+              {% autoescape false %}
+              <div class="tab-pane fade show active text-center" id="nav-anticipation" role="tabpanel" aria-labelledby="nav-anticipation-tab">
+                <p>{{lyrics[0].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-joy" role="tabpanel" aria-labelledby="nav-joy-tab">
+                <p>{{lyrics[1].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-trust" role="tabpanel" aria-labelledby="nav-trust-tab">
+                <p>{{lyrics[2].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-sadness" role="tabpanel" aria-labelledby="nav-sadness-tab">
+                <p>{{lyrics[3].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-fear" role="tabpanel" aria-labelledby="nav-fear-tab">
+                <p>{{lyrics[4].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-surprise" role="tabpanel" aria-labelledby="nav-surprise-tab">
+                <p>{{lyrics[5].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-anger" role="tabpanel" aria-labelledby="nav-anger-tab">
+                <p>{{lyrics[6].replace('\n', '<br>')}}</p>
+              </div>
+              <div class="tab-pane fade text-center" id="nav-disgust" role="tabpanel" aria-labelledby="nav-disgust-tab">
+                <p>{{lyrics[7].replace('\n', '<br>')}}</p>
+              </div>
+              {% endautoescape %}
+            </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
